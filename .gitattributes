@@ -1,0 +1,4 @@
+# shell scripts + Dockerfile must stay LF so the Linux container can execute them
+*.sh text eol=lf
+Dockerfile text eol=lf
+docker-compose.yml text eol=lf

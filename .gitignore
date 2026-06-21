@@ -1,0 +1,14 @@
+# local secrets + runtime
+.env
+*.db
+
+# the no-Docker path clones the firm + builds a venv here — never commit them
+firm/
+.venv/
+venv/
+
+# python
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
