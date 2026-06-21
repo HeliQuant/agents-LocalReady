@@ -9,8 +9,9 @@ WORKDIR /opt
 RUN git clone --depth 1 https://github.com/HeliQuant/agents.git firm
 
 WORKDIR /opt/firm
+# Deps only — the firm runs from /opt/firm (WORKDIR); NO editable install (the pyproject's hatch wheel
+# target isn't configured, and app.py + firm/ import directly from the working directory).
 RUN pip install --no-cache-dir -r requirements.txt \
-    && pip install --no-cache-dir -e . \
     && pip install --no-cache-dir "uvicorn[standard]"
 
 COPY start.sh /opt/start.sh

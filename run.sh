@@ -6,7 +6,7 @@ set -e
 cd firm
 [ -d .venv ] || python3 -m venv .venv
 ./.venv/bin/pip install --upgrade pip >/dev/null
-./.venv/bin/pip install -r requirements.txt -e . "uvicorn[standard]"
+./.venv/bin/pip install -r requirements.txt "uvicorn[standard]"
 
 # load ../.env so the firm sees HQ_SETUP_TOKEN etc.
 set -a; [ -f ../.env ] && . ../.env; set +a

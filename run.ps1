@@ -6,7 +6,7 @@ Push-Location firm
 if (-not (Test-Path .venv)) { python -m venv .venv }
 $py = ".\.venv\Scripts\python.exe"
 & $py -m pip install --upgrade pip | Out-Null
-& $py -m pip install -r requirements.txt -e . "uvicorn[standard]"
+& $py -m pip install -r requirements.txt "uvicorn[standard]"
 
 # load ..\.env into the process environment so the firm sees HQ_SETUP_TOKEN etc.
 if (Test-Path ..\.env) {
